@@ -60,7 +60,7 @@ namespace BecomeSolid.Day1
 
                                 Console.WriteLine(string.Format("temp is: {0}", temp));
 
-                                var message = "In " + cityName + " " + description + " and the temperature is " + temp.ToString("+#;-#") + " C";
+                                var message = "In " + cityName + " " + description + " and the temperature is " + temp.ToString("+#;-#") + "°C";
 
                                 var t = await bot.SendTextMessage(update.Message.Chat.Id, message);
                                 Console.WriteLine("Echo Message: {0}", message);
