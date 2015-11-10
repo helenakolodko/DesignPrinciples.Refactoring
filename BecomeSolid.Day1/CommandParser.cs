@@ -8,17 +8,30 @@ namespace BecomeSolid.Day1
 {
     public class CommandParser
     {
-        private char commandToken = '\\';
-        private char optionToken = '-';
+        private string commandToken;
+
+        public CommandParser():
+            this(@"\")
+	    {
+	    }
+
+        public CommandParser(string commandToken)
+        {
+            this.commandToken = commandToken;
+        }
 
         public string GetCommandName(string query)
         {
-            throw new NotImplementedException();
+            string firstWord = query.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).First();
+            if (firstWord.StartsWith(commandToken))
+                return firstWord.Substring(1);
+            else 
+                return null;
         }
 
-        public string[] GetCommandParameters(string query)
+        public IEnumerable<string> GetCommandParameters(string query)
         {
-            throw new NotImplementedException();
+            return query.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Skip(1);
         }
     }
 }

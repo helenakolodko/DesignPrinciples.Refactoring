@@ -64,11 +64,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandParams.cs" />
+    <Compile Include="CommandContext.cs" />
     <Compile Include="CommandParser.cs" />
     <Compile Include="CustomBot.cs" />
     <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="InfoBot.cs" />
+    <Compile Include="IBot.cs" />
     <Compile Include="IResponseStringBuilder.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="Program.cs" />

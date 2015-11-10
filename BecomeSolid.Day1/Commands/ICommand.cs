@@ -8,6 +8,6 @@ namespace BecomeSolid.Day1
 {
     public interface ICommand
     {
-        void Execute(CommandParams parameters);
+        void Execute(CommandContext context);
     }
 }

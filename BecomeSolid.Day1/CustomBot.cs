@@ -9,7 +9,7 @@ using Telegram.Bot.Types;
 
 namespace BecomeSolid.Day1
 {
-    public class CustomBot
+    public class CustomBot: IBot
     {
         private Api api;
         private int offset;
