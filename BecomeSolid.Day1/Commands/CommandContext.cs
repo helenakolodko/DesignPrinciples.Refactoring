@@ -10,14 +10,17 @@ namespace BecomeSolid.Day1
     {
         private IEnumerable<string> parameters;
         private CustomBot bot;
-        public CommandContext(IEnumerable<string> parameters, CustomBot bot)
+        private int chatId;
+        public CommandContext(IEnumerable<string> parameters, int chatId, CustomBot bot)
 	    {
             this.parameters = parameters;
             this.bot = bot;
+            this.chatId = chatId;
 	    }
 
         public IEnumerable<string> Parameters { get { return parameters; } }
         public CustomBot Bot { get { return bot; } }
+        public int ChatId { get { return chatId; } }
         
     }
 }

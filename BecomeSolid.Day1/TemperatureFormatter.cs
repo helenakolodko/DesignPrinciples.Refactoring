@@ -10,6 +10,7 @@ namespace BecomeSolid.Day1
     public class TemperatureFormatter : IFormatProvider, ICustomFormatter
     {
         private IFormatProvider parent;
+        private string[] formats = { "C", "F", "K" };
         public TemperatureFormatter()
             : this(CultureInfo.CurrentCulture)
             { }
@@ -29,28 +30,44 @@ namespace BecomeSolid.Day1
 
         public string Format(string format, object arg, IFormatProvider formatProvider)
         {
-            if (!this.Equals(formatProvider))
-                return null;
-            if (arg != null )
+            string result;
+            if (format != null && IsApplicableTo(format.ToUpper(), arg))
             {
                 double value;
-                if (double.TryParse(arg.ToString(), out value) )
-                    switch (format.ToUpper())
-                    {
-                        case "G":
-                        case "C":
-                            return value.ToString("+#;-#") + "°C";
-                        case "F":
-                            return ToFahrenheit(value).ToString("+#;-#") + "°F";
-                        case "K":
-                            return ToKelvin(value).ToString("+#;-#") + "K";
-                        default:
-                            throw new FormatException(String.Format("'{0}' is not a valid format specifier.", format));
-                    }
+                if (double.TryParse(arg.ToString(), out value))
+                    result = GetFormatted(format.ToUpper(), value);
                 else
                     throw new FormatException(String.Format("'{0}' is not a valid argument.", arg));
             }
-            return string.Format(parent, "{0:" + format + "}", arg);
+            else
+                result = String.Format(parent, "{0:" + format + "}", arg);
+            return result;
+        }
+
+        private static string GetFormatted(string format, double value)
+        {
+            string result = "";
+            switch (format)
+            {
+                case "C":
+                    result = value.ToString("+#.##;-#.##") + "°C";
+                    break;
+                case "F":
+                    result = ToFahrenheit(value).ToString("+#.##;-#.##") + "°F";
+                    break;
+                case "K":
+                    result = ToKelvin(value).ToString("+#.##;-#.##") + "K";
+                    break;
+            }
+            return result;
+        }
+
+        private bool IsApplicableTo(string format, object arg)
+        {
+            if (arg != null && formats.Contains(format))
+                return true;
+            else
+                return false;
         }
 
         private static double ToKelvin(double value)

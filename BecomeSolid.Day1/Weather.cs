@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace BecomeSolid.Day1
 {
-    public interface IResponseStringBuilder
+    public class Weather
     {
-        String Build();
+        public string City { get; set; }
+        public string Description { get; set; }
+        public double Temperature { get; set; }
     }
 }

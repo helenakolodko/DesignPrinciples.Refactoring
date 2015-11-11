@@ -8,7 +8,7 @@ namespace BecomeSolid.Day1
 {
     public class CommandFactory
     {
-        private readonly IDictionary<string, ICommand> commands;
+        private readonly Dictionary<string, ICommand> commands = new Dictionary<string, ICommand>();
 
         public void Register(string commandName, ICommand command)
         {
@@ -17,7 +17,11 @@ namespace BecomeSolid.Day1
 
         public ICommand GetCommand(string commandName)
         {
-            commands[commandName];
+            ICommand result;
+            if (commands.TryGetValue(commandName, out result))
+                return result;
+            else
+                return null;
         }
     }
 }

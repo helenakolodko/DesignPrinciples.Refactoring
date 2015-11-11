@@ -64,18 +64,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandContext.cs" />
-    <Compile Include="CommandParser.cs" />
+    <Compile Include="Commands\CommandContext.cs" />
+    <Compile Include="Commands\CommandFactory.cs" />
+    <Compile Include="Commands\CommandParser.cs" />
     <Compile Include="CustomBot.cs" />
     <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="IBot.cs" />
-    <Compile Include="IResponseStringBuilder.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TemperatureProvider.cs" />
     <Compile Include="Services\WeatherService.cs" />
     <Compile Include="Services\YahooRateService.cs" />
+    <Compile Include="TemperatureFormatter.cs" />
+    <Compile Include="Weather.cs" />
+    <Compile Include="WeatherCommand.cs" />
+    <Compile Include="WeatherResponseStringBuilder.cs" />
+    <Compile Include="WebHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

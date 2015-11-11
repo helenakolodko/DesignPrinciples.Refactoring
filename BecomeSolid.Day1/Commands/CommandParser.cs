@@ -11,7 +11,7 @@ namespace BecomeSolid.Day1
         private string commandToken;
 
         public CommandParser():
-            this(@"\")
+            this("/")
 	    {
 	    }
 

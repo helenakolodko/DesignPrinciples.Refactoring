@@ -9,7 +9,7 @@ using Telegram.Bot.Types;
 
 namespace BecomeSolid.Day1
 {
-    public class CustomBot: IBot
+    public class CustomBot
     {
         private Api api;
         private int offset;
@@ -30,7 +30,10 @@ namespace BecomeSolid.Day1
             if (index >= updates.Length)
 	        {
                 do
+                {
                     updates = await api.GetUpdates(offset);
+                    await Task.Delay(1000);
+                }
                 while (updates.Length == 0);
 		        index = 0;
 	        }
