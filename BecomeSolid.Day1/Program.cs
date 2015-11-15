@@ -11,8 +11,9 @@ using Telegram.Bot.Types;
 using File = System.IO.File;
 using Newtonsoft.Json;
 using System.Configuration;
+using BecomeSolid.Commands;
 
-namespace BecomeSolid.Day1
+namespace BecomeSolid
 {
     class Program
     {
@@ -24,7 +25,8 @@ namespace BecomeSolid.Day1
         static async Task Run()
         {
             CommandFactory factory = new CommandFactory();
-            factory.Register("weather", new WeatherCommand() { DefaultCity = "Minsk"});
+            factory.Register("weather", new WeatherCommand() { DefaultCity = "Minsk" });
+            factory.Register("rate", new CurrencyRateCommand());
 
             CustomBot bot = new CustomBot();
             CommandParser parser = new CommandParser();

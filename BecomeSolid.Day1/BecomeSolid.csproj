@@ -7,8 +7,8 @@
     <ProjectGuid>{3E6233F8-A223-4F9F-8E6F-79B2A32F0DD8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BecomeSolid.Day1</RootNamespace>
-    <AssemblyName>BecomeSolid.Day1</AssemblyName>
+    <RootNamespace>BecomeSolid</RootNamespace>
+    <AssemblyName>BecomeSolid</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,8 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NCalc, Version=1.3.8.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03, processorArchitecture=MSIL">
+      <HintPath>..\packages\ncalc.1.3.8\lib\NCalc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nustache.Core, Version=1.15.3.7, Culture=neutral, PublicKeyToken=efd6f3d8f76ecd9f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nustache.1.15.3.7\lib\net20\Nustache.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -67,16 +75,18 @@
     <Compile Include="Commands\CommandContext.cs" />
     <Compile Include="Commands\CommandFactory.cs" />
     <Compile Include="Commands\CommandParser.cs" />
+    <Compile Include="Commands\CurrencyRateCommand.cs" />
+    <Compile Include="Commands\TaskCommand.cs" />
     <Compile Include="CustomBot.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\WeatherService.cs" />
-    <Compile Include="Services\YahooRateService.cs" />
+    <Compile Include="Services\NbrbRateService.cs" />
     <Compile Include="TemperatureFormatter.cs" />
     <Compile Include="Weather.cs" />
-    <Compile Include="WeatherCommand.cs" />
+    <Compile Include="Commands\WeatherCommand.cs" />
     <Compile Include="WeatherResponseStringBuilder.cs" />
     <Compile Include="WebHelper.cs" />
   </ItemGroup>
@@ -91,7 +101,7 @@
     <Analyzer Include="..\packages\Microsoft.AnalyzerPowerPack.1.0.1\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.CSharp.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ResponseStringBuilders\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

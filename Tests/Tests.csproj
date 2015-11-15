@@ -54,10 +54,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BecomeSolid.Day1\BecomeSolid.Day1.csproj">
+    <ProjectReference Include="..\BecomeSolid.Day1\BecomeSolid.csproj">
       <Project>{3e6233f8-a223-4f9f-8e6f-79b2a32f0dd8}</Project>
-      <Name>BecomeSolid.Day1</Name>
+      <Name>BecomeSolid</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

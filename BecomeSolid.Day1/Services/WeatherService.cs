@@ -7,7 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BecomeSolid.Day1
+namespace BecomeSolid.Services
 {
     public class WeatherService: IService
     {
@@ -18,6 +18,7 @@ namespace BecomeSolid.Day1
             : this(ConfigurationManager.AppSettings["OpenWeatherMapApiKey"])
         {
         }
+
         public WeatherService(string apiKey) 
         {
             this.apiKey = apiKey;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BecomeSolid.Day1
+namespace BecomeSolid.Commands
 {
     public class CommandParser
     {

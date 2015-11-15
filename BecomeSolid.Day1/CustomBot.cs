@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace BecomeSolid.Day1
+namespace BecomeSolid
 {
     public class CustomBot
     {

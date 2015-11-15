@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BecomeSolid.Day1
+namespace BecomeSolid
 {
     public class TemperatureFormatter : IFormatProvider, ICustomFormatter
     {

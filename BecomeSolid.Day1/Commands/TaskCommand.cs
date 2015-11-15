@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace BecomeSolid.Commands
 {
-    public interface ICommand
+    public class TaskCommand: ICommand
     {
-        void Execute(CommandContext context);
+        public void Execute(CommandContext context)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

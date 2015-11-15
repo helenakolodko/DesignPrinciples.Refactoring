@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BecomeSolid.Day1", "BecomeSolid.Day1\BecomeSolid.Day1.csproj", "{3E6233F8-A223-4F9F-8E6F-79B2A32F0DD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BecomeSolid", "BecomeSolid.Day1\BecomeSolid.csproj", "{3E6233F8-A223-4F9F-8E6F-79B2A32F0DD8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{59BFA5D9-4968-400F-BCC8-2E85E7284D9D}"
 EndProject
